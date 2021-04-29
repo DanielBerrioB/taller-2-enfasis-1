@@ -10,35 +10,37 @@ class ReceiveVerification():
         if (not self.credentials):
             self.isThereAnyError = True
             print('YOUR CREDENTIALS ARE EMPTY')
-            return
+            return False
         
-        print(f'BASIC AUTH')
+        print('BASIC AUTH')
+        return True
 
     def restructureAuth(self):
         if (self.isThereAnyError):
             print('YOU CANNOT CONTINUE WITH THE RESTRUCTURE AUTH THERE ARE AN ERROR')
-            return
+            return False
 
         if (not self.safeCredentials):
             print('YOUR CREDENTIALS ARE EMPTY')
-            return
+            return True
 
         print(f'RESTRUCTURE AUTH {self.safeCredentials}')
 
     def ipAuth(self):
         if (self.isThereAnyError):
             print('YOU CANNOT CONTINUE WITH THE IP AUTH THERE ARE AN ERROR')
-            return
+            return False
 
         if (not self.ip):
             print('THE IP WAS NOT PROVIDED')
-            return
+            return True
 
         print(f'IP AUTH: ${self.ip}')
 
     def cacheAuth(self):
         if (self.isThereAnyError):
             print('YOU CANNOT CONTINUE WITH THE CACHE AUTH THERE ARE AN ERROR')
-            return
+            return False
         
         print('CACHE AUTH')
+        return False

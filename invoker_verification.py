@@ -7,6 +7,9 @@ class InvokerVerification:
     
     def doAllVerification(self):
         for verification in self.verifications:
-            verification.execute()
+            if (not verification.execute()):
+                self.verifications = []
+                return False
         self.verifications = []
+        return True
 
